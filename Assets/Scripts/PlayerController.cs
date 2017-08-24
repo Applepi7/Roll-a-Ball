@@ -25,4 +25,13 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         rigidbody.AddForce(movement * speed);
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("PickUp"))
+        {
+            col.gameObject.SetActive(false);
+            GameManager.instance.score++;
+        } 
+    }
 }
