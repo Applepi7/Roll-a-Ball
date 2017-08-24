@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public static PlayerController instance;
+
     public float speed = 10.0f;
 
     private Rigidbody rigidbody;
 
     void Start()
     {
+        PlayerController.instance = this;
         rigidbody = GetComponent<Rigidbody>();
     }
 

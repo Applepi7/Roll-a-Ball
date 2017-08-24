@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     public Text scoreText;
+    public Text winText;
     public int score = 0;
 
     // Use this for initialization
@@ -18,5 +19,11 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         scoreText.text = "SCORE : " + score;
+        Win();
 	}
+
+    void Win()
+    {
+        if (score >= 8) winText.text = "You Win!!";
+    }
 }
